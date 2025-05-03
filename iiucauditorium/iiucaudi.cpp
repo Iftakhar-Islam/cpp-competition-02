@@ -3,49 +3,51 @@
 
  class IIUC_Auditorium {
  private:
-     float area;
-     float totalFloorSpace;
      int hallID;
-     int maxCapacity;
+     int maxcapacity;
+     float area;
+     float totalSpace;
 
  public:
-
-     IIUC_Auditorium(float a, float tfs, int id, int capacity) {
-         area = a;
-         totalFloorSpace = tfs;
+     IIUC_Auditorium( int id, int capacity,float a, float s) {
          hallID = id;
-         maxCapacity = capacity;
+         maxcapacity = capacity;
+         area = a;
+         totalSpace = s;
+         
      }
 
 
-     IIUC_Auditorium(const IIUC_Auditorium &aud) {
-         area = aud.area;
-         totalFloorSpace = aud.totalFloorSpace;
-         hallID = aud.hallID;
-         maxCapacity = aud.maxCapacity;
+     IIUC_Auditorium(const IIUC_Auditorium &Auditorium) {
+         hallID =Auditorium.hallID;
+         maxcapacity = Auditorium.maxcapacity;
+         area =Auditorium.area;
+         totalSpace = Auditorium.totalSpace;
+         
      }
 
 
      void display() {
-         cout << "Auditorium Hall ID: " << hallID << endl;
-         cout << "Area: " << area << " sq.ft" << endl;
-         cout << "Total Floor Space: " << totalFloorSpace << " sq.ft" << endl;
-         cout << "Max  Capacity: " << maxCapacity << " participants" << endl;
-              }
+         cout << "Total Space: " << totalSpace  << endl;
+         cout << "Maximum Capacity: " << maxcapacity  << endl;
+         cout << "Hall ID: " << hallID << endl;
+         cout << "Area: " << area << endl;
+         
+     }
  };
 
  int main() {
 
-     IIUC_Auditorium aud1(5000.0, 4500.0, 201, 300);
-     IIUC_Auditorium aud2(6000.0, 5500.0, 202, 400);
+     IIUC_Auditorium hall1(6000, 3000, 350, 650);
+     IIUC_Auditorium hall2(7000, 4000, 400,700);
 
 
-     IIUC_Auditorium aud3 = aud1;
+     IIUC_Auditorium hall3 = hall1;
 
 
-     aud1.display();
-     aud2.display();
-     aud3.display();
+     hall1.display();
+     hall2.display();
+     hall3.display();
 
      return 0;
  }
