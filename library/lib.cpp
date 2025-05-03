@@ -4,53 +4,45 @@
 
  class Library {
  private:
-     string libraryName;
-     int totalBooks;
-     int sittingCapacity;
-     int libraryID;
-
+     int totalBook;
+     int Capacity;
+     int libraryid;
+     string libraryname;
  public:
 
-     Library(string name, int books, int capacity, int id) {
-         libraryName = name;
-         totalBooks = books;
-         sittingCapacity = capacity;
-         libraryID = id;
+     Library( int book, int capacity, int id,string name) {    
+         totalBook = book;
+         Capacity = capacity;
+         libraryid = id;
+         libraryname = name;
      }
 
-     Library(const Library &lib) {
-         libraryName = lib.libraryName;
-         totalBooks = lib.totalBooks;
-         sittingCapacity = lib.sittingCapacity;
-         libraryID = lib.libraryID;
+     Library(const Library &library) {
+         totalBook = library.totalBook;
+         Capacity = library.Capacity;
+         libraryid = library.libraryid;
+         libraryname = library.libraryname;
      }
 
 
      void display() {
-         cout << "Library Name: " << libraryName << endl;
-         cout << "Total Books: " << totalBooks << endl;
-         cout << "Sitting Capacity: " << sittingCapacity << endl;
-         cout << "Library ID: " << libraryID << endl;
-         cout << "---------------------------" << endl;
+         cout << "Total Books=" << totalBook<< endl;
+         cout << "Sitting Capacity=" << Capacity << endl;
+         cout << "Library ID=" << libraryid << endl;
+         cout << "Library Name=" << libraryname << end;
      }
  };
 
  int main() {
 
-     Library lib1("Central Library", 5000, 200, 101);
-     Library lib2("City Library", 3000, 150, 102);
+     Library library1("Central Library", 5000, 350, 300);
+     Library library2("City Library", 5500, 400, 500);
 
 
-     Library lib3 = lib1;
+     Library library3 = library1;
 
-
-     cout << "Library 1 Details:" << endl;
-     lib1.display();
-
-     cout << "Library 2 Details:" << endl;
-     lib2.display();
-
-     cout << "Library 3 (Copied from Library 1) Details:" << endl;
+     library1.display();
+     library2.display();
      lib3.display();
 
      return 0;
