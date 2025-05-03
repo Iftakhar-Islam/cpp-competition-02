@@ -5,7 +5,7 @@ using namespace std;
 class University_Student {
 private:
     string name;
-    string studentID;
+    string stuid;
     string department;
     float cgpa;
 
@@ -13,7 +13,7 @@ public:
     // Parameterized constructor
     University_Student(string n, string id, string dept, float gpa) {
         name = n;
-        studentID = id;
+        stuid = id;
         department = dept;
         cgpa = gpa;
     }
@@ -21,32 +21,31 @@ public:
     // Copy constructor
     University_Student(const University_Student &student) {
         name = student.name;
-        studentID = student.studentID;
+        stuid = student.stuid;
         department = student.department;
         cgpa = student.cgpa;
     }
 
-    // Function to display student information
-    void displayInfo() {
-        cout << "Student Name: " << name << endl;
-        cout << "Student ID: " << studentID << endl;
-        cout << "Department: " << department << endl;
-        cout << "CGPA: " << cgpa << endl;
+    void display() {
+        cout << "Student Name = " << name << endl;
+        cout << "Student ID = " << stuid << endl;
+        cout << "Department =" << department << endl;
+        cout << "CGPA = " << cgpa;
     }
 };
 
 int main() {
-    // Creating object using parameterized constructor
-    University_Student student1("MD.Naeem", "ET243117", "EEE", 3.87);
+    
+    University_Student student1("MD.iftakhar", "ET243097", "EEE", 3.5);
 
-    // Creating object using copy constructor
+    
     University_Student student2 = student1;
 
-    cout << "Student 1 Info:" << endl;
-    student1.displayInfo();
+    cout << "Student 1 =" << endl;
+    student1.display();
 
-    cout << "\nStudent 2 Info (Copied):" << endl;
-    student2.displayInfo();
+    cout << "\nStudent 2  (Copied)=" << endl;
+    student2.display();
 
     return 0;
 }
