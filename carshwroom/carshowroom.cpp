@@ -4,40 +4,39 @@
 
  class Car_Showroom {
  private:
+     int numCar;
+     int showroomid;
+     float showroomarea; 
      string showroomName;
-     int numOfCars;
-     float showroomArea;
-     int showroomID;
-
  public:
 
-     Car_Showroom(string name, int cars, float area, int id) {
+     Car_Showroom( int car,  int id,float area , string name) {
+         numCar = car;
+         showroomid = id;
+         showroomarea = area;
          showroomName = name;
-         numOfCars = cars;
-         showroomArea = area;
-         showroomID = id;
      }
 
 
      Car_Showroom(const Car_Showroom &showroom) {
+          numCar = showroom.numCar;
+         showroomid = showroom.showroomid;
+         showroomarea = showroom.showroomarea;
          showroomName = showroom.showroomName;
-         numOfCars = showroom.numOfCars;
-         showroomArea = showroom.showroomArea;
-         showroomID = showroom.showroomID;
      }
 
 
      void display() {
-         cout << "Showroom Name: " << showroomName << endl;
-         cout << "Number of Cars: " << numOfCars << endl;
-         cout << "Showroom Area: " << showroomArea << " sq.ft" << endl;
-         cout << "Showroom ID: " << showroomID << endl;
+         cout << "Showroom Name= " << showroomName << endl;
+         cout << "Number of Cars= " << numCar << endl;
+         cout << "Showroom Area= " << showroomarea << endl;
+         cout << "Showroom ID= " << showroomid ;
      }
  };
 
  int main() {
-     Car_Showroom room1("AutoWorld", 50, 1500.75, 101);
-     Car_Showroom room2("CarZone", 30, 1200.50, 102);
+     Car_Showroom room1("World", 50, 1500.75, 101);
+     Car_Showroom room2("CarArea", 30, 1200.50, 102);
 
 
      Car_Showroom room3 = room1;
