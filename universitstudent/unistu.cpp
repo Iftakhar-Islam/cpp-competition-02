@@ -11,10 +11,10 @@ private:
 
 public:
     // Parameterized constructor
-    University_Student(string n, string id, string dept, float gpa) {
+    University_Student(string n, string id, string d, float gpa) {
         name = n;
         stuid = id;
-        department = dept;
+        department = d;
         cgpa = gpa;
     }
 
