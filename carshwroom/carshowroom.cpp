@@ -2,6 +2,8 @@
  #include <string>
  using namespace std;
 
+
+
  class Car_Showroom {
  private:
      int numCar;
@@ -37,8 +39,6 @@
  int main() {
      Car_Showroom room1("World", 50, 1500.75, 101);
      Car_Showroom room2("CarArea", 30, 1200.50, 102);
-
-
      Car_Showroom room3 = room1;
 
     room1.display();
